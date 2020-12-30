@@ -1,13 +1,13 @@
 # En Python 3.x Leo y despliego contenido de un .txt
 fh = open("biblia.txt", "r")
-
+# Inicializo Contadores 
 countl = 0
 countw = 0
 palabras=dict()
+# Recorro las lineas
 for linea in fh:
     # Despliego linea
     # print(linea.strip())
-    # Acumulo palabras
     # Cuento lineas
     countl = countl + 1
     if countl==1000:
@@ -17,6 +17,7 @@ for linea in fh:
     # Recorro cada palabra en la linea
     for palabra in linea:
         #print(palabra)
+        # Acumulo palabras
         palabras[palabra]=palabras.get(palabra,0)+1
         countw=countw+1
 

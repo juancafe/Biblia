@@ -4,6 +4,8 @@ fh = open("biblia.txt", "r")
 countl = 0
 countw = 0
 palabras=dict()
+to_replace=',.:;'
+nombres=('Dios','Josue','Pablo','Maria','Jesucristo','Efraín','Jehová','David','El','Moisés','Saúl','Salomón','Judá','Hijo','Babilonia','Israel')
 # Recorro las lineas
 for linea in fh:
     # Despliego linea
@@ -17,6 +19,8 @@ for linea in fh:
     # Recorro cada palabra en la linea
     for palabra in linea:
         #print(palabra)
+        # Limpio palabra
+        palabra=palabra.replace(",","")
         # Acumulo palabras
         palabras[palabra]=palabras.get(palabra,0)+1
         countw=countw+1
